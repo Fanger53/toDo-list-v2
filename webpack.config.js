@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/index.js',
   output: {
     filename: 'main.js',
@@ -13,6 +13,10 @@ module.exports = {
       template: './src/index.html',
     }),
   ],
+  devServer: {
+    contentBase: './dist',
+    port: 8080,
+  },
 
   module: {
     rules: [
